@@ -1,0 +1,222 @@
+/* Importar una fuente de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f3e8; /* Tono más suave (servirá de fallback si la imagen no carga) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+    /* Fondo de imagen para el body */
+    background-image: url('../img/fondos/fondo_inicio.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; /* Para que el fondo no se mueva al hacer scroll si el contenido es largo */
+}
+
+/* MODIFICACIÓN CLAVE: Pantalla semitransparente */
+.pantalla {
+    background-color: rgba(255, 255, 255, 0.8); /* Blanco con 80% de opacidad */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.oculto {
+    display: none;
+}
+
+/* === Títulos === */
+h1 {
+    color: #e63946; /* Rojo Saice */
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #457b9d; /* Azul de utensilios */
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: #1d3557; /* Azul oscuro */
+}
+
+/* === Botones === */
+button {
+    padding: 12px 25px;
+    border: none;
+    background-color: #e63946;
+    color: white;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s transform, 0.3s background-color;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #a62633;
+    transform: translateY(-2px);
+}
+
+/* === Contenedor de Juego === */
+.contenedor {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+    margin-top: 20px;
+    gap: 20px;
+}
+
+/* === Ingredientes (Items arrastrables) === */
+.ingredientes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+    width: 45%; 
+    min-height: 250px;
+    padding: 5px;
+}
+
+.item {
+    background: #f8b400; /* Color amarillo/naranja */
+    border: 2px solid #d45d00;
+    padding: 5px;
+    margin: 5px;
+    cursor: grab;
+    font-weight: 700;
+    color: white;
+    border-radius: 10px;
+    transition: 0.2s opacity;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 80px; 
+    height: 100px; 
+    box-sizing: border-box;
+}
+
+.item:hover {
+    opacity: 0.8;
+}
+
+.item img {
+    width: 50px; 
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 3px;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.item p {
+    font-size: 12px;
+    margin: 0;
+    line-height: 1.2;
+    text-shadow: 0 0 3px rgba(0,0,0,0.2);
+}
+
+/* === Zona de Drop (Utensilio) === */
+.zona-drop {
+    width: 50%;
+    min-height: 250px;
+    background: rgba(255, 255, 255, 0.5); /* Fondo blanco semitransparente */
+    border: 3px dashed #d45d00;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.utensilio-imagen {
+    width: 120px; 
+    height: 120px;
+    object-fit: contain;
+    margin: 10px auto;
+    opacity: 0.8; 
+    border-radius: 0;
+    box-shadow: none;
+    transition: 0.2s;
+}
+
+.zona-drop:hover .utensilio-imagen {
+    opacity: 1; 
+}
+
+/* Contenedor para mensajes de drop */
+#mensajes-drop {
+    font-weight: bold;
+    color: #1d3557;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.7); /* Fondo sutil para el texto de mensaje */
+    padding: 5px 10px;
+    border-radius: 8px;
+    backdrop-filter: blur(2px); 
+    -webkit-backdrop-filter: blur(2px); 
+}
+
+#mensajes-drop p {
+    margin: 5px 0;
+    font-weight: 700;
+}
+
+
+/* === Pantalla Final (Ranking) === */
+#pantalla-final img {
+    max-width: 250px;
+    height: auto;
+    margin: 15px 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    background: #fff3d4;
+    margin: 8px 0;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: left;
+    border-left: 5px solid #e63946;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ingredientes,
+    .zona-drop {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .ingredientes {
+        justify-content: center;
+    }
+}

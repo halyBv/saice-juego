@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego de Cocina - Prepara un Saice</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Pantalla de inicio -->
+  <div id="pantalla-inicio" class="pantalla">
+    <h1>¡Prepara un Saice Tarijeño!</h1>
+    <button id="btnJugar">Comenzar</button>
+  </div>
+
+  <!-- Pantalla de juego -->
+  <div id="pantalla-juego" class="pantalla oculto">
+    <h2>Etapa de Preparación</h2>
+    <div id="zona-juego"></div>
+  </div>
+
+  <!-- Pantalla de resultado -->
+  <div id="pantalla-final" class="pantalla oculto">
+    <h2>¡Plato Terminado!</h2>
+    <img src="img/final/saice_final.png" alt="Plato de Saice">
+    <p id="mensaje-final"></p>
+    <button id="btnReiniciar">Volver a jugar</button>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
